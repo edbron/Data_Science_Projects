@@ -17,7 +17,7 @@ auth.set_access_token(accessToken, accessToken_secret)
 api = tweepy.API(auth)
 
 #serching tweets
-public_tweets = api.search('')
+public_tweets = api.search('Got')
 
 #performing the analysis
 for tweet in public_tweets:
