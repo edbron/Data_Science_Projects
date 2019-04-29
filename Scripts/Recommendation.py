@@ -1,4 +1,3 @@
-#%%
 #import library
 import numpy as np
 from lightfm.datasets import fetch_movielens
@@ -50,6 +49,3 @@ def recommended(model, data, user_ids):
 
 #call the model, data and the user id
 recommended(model, data, [3, 25, 450])
-
-    
-
