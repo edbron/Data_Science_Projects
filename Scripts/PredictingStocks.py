@@ -39,7 +39,7 @@ def predict_prices(dates, prices, x):
     svr_rbf.fit(dates, prices)
 
     #plot graph
-    plt.scatter(dates, prices, color='black', label='Data')
+    plt.scatter(dates, prices, color='white', label='Data')
     plt.plot(dates, svr_lin.predict(dates), color='yellow', label='Linear Model')
     plt.plot(dates, svr_poly.predict(dates), color='blue', label='Polynomial Model')
     plt.plot(dates, svr_rbf.predict(dates), color='red', label='RBF Model')
@@ -48,13 +48,13 @@ def predict_prices(dates, prices, x):
     plt.title('Support Vector Regression')
     plt.legend()
     plt.show()
-    return svr_lin.predict(x)(0), svr_poly.predict(x)(0), svr_rbf.predict(x)(0)
+    return svr_lin.predict(x)[0], svr_poly.predict(x)[0], svr_rbf.predict(x)[0]
 
 #import Data
 get_data('/home/ed-bron/Desktop/DS_Projects/Data_Science_Projects/Scripts/AAPL.csv')
 
 #create a variable to store predicted price
-predictedPrice = predict_prices(dates, prices, 29)
+predictedPrice = predict_prices(dates, prices, 10)
 
-#display our results
+#display our resultsAAPL.csv
 print(predictedPrice)
