@@ -1,4 +1,4 @@
-#import liraries
+#%%import liraries
 import csv
 import numpy as np
 from sklearn.svm import SVR
@@ -21,7 +21,7 @@ def get_data(filename):
             #we are appending the date column into and integer and using the split function to remove the dashes from the dates
             dates.append(int(row[0].split('-')[0]))
             #we append the price column by changing the data type to float
-            prices.append(float(row[1])
+            prices.append(float(row[1]))
     return
 
 #creat a predict function and use numpy to format our list into an nx1 matrix
@@ -51,7 +51,7 @@ def predict_prices(dates, prices, x):
     return svr_lin.predict(x)(0), svr_poly.predict(x)(0), svr_rbf.predict(x)(0)
 
 #import Data
-get_data('AAPL.csv')
+get_data('/home/ed-bron/Desktop/DS_Projects/Data_Science_Projects/Scripts/AAPL.csv')
 
 #create a variable to store predicted price
 predictedPrice = predict_prices(dates, prices, 29)
